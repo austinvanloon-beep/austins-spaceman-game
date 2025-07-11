@@ -47,7 +47,14 @@ function render() {
 }
 
 function createLetterButton() {
-
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    // lettersEl = ''
+    for (let letter of alphabet) {
+        const button = document.createElement('button')
+        button.textContent = letter
+        button.addEventListener('click', handleMove)
+        lettersEl.appendChild(button)
+    }
 }
 
 function handleMove(event) {
