@@ -20,8 +20,8 @@ function init() {
     guessedLetters = []
     remainingGuesses = 6
     gameStatus = 'active'
-    // console.log('Secret word:', secretWord)
-    // render()
+    createLetterButton()
+    render()
 }
 
 
@@ -48,7 +48,7 @@ function render() {
 
 function createLetterButton() {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    // lettersEl = ''
+    lettersEl.innerHTML = ''
     for (let letter of alphabet) {
         const button = document.createElement('button')
         button.textContent = letter
@@ -60,18 +60,26 @@ function createLetterButton() {
 function handleMove(event) {
   const letter = event.target.textContent;
 
-  if (gameStatus !== 'active' || guessedLetters.includes(letter)) return;
-  guessedLetters.push(letter);
+  event.target.disabled = true
+
+  if (gameStatus !== 'active' || guessedLetters.includes(letter)) return
+  guessedLetters.push(letter)
 
   if (!secretWord.includes(letter)) {
-    remainingGuesses--;
+    remainingGuesses--
   }
-  const isWin = secretWord.split('').every(char => guessedLetters.includes(char));
+  const isWin = secretWord.split('').every(char => guessedLetters.includes(char))
   if (isWin) {
-    gameStatus = 'won';
+    gameStatus = 'won'
   }
   if (remainingGuesses <= 0) {
-    gameStatus = 'lost';
+    gameStatus = 'lost'
   }
-  render();
+
+  }
+  render()
 }
+
+
+playAgainBtn.addEventListener('click', init)
+init()

@@ -1,0 +1,21 @@
+body {
+    font-family: 'Bitcount Grid Double', sans-serif
+}
+
+button {
+    font-family: 'Tektur', sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 6px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: blue;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ef1919;
+    transform: scale(0.80);
+}
