@@ -15,7 +15,7 @@ const playAgainBtn = document.getElementById('play-again')
 
 
 function init() {
-    const wordList = ['word1', 'word2', 'word3', 'word4', 'word5']
+    const wordList = ['WORDONE', 'WORDTWO', 'WORDTHREE', 'WORDFOUR', 'WORDFIVE']
     secretWord = wordList[Math.floor(Math.random() * wordList.length)]
     guessedLetters = []
     remainingGuesses = 6
@@ -59,15 +59,19 @@ function createLetterButton() {
 
 function handleMove(event) {
   const letter = event.target.textContent;
-
   event.target.disabled = true
 
   if (gameStatus !== 'active' || guessedLetters.includes(letter)) return
+
   guessedLetters.push(letter)
 
   if (!secretWord.includes(letter)) {
     remainingGuesses--
+    messageEl.textContent = `Oops! "${letter}" is not in the word.`
+  } else {
+    messageEl.textContent = ''
   }
+
   const isWin = secretWord.split('').every(char => guessedLetters.includes(char))
   if (isWin) {
     gameStatus = 'won'
@@ -75,10 +79,9 @@ function handleMove(event) {
   if (remainingGuesses <= 0) {
     gameStatus = 'lost'
   }
-
-  }
   render()
 }
+
 
 
 playAgainBtn.addEventListener('click', init)
