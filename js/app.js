@@ -33,13 +33,13 @@ function render() {
   }
   wordEl.textContent = displayWord.trim();
 
-  guessesLeftEl.textContent = `Guesses Left: ${remainingGuesses}/6`;
+  guessesLeftEl.textContent = `Guesses Left: ${remainingGuesses}`;
 
   if (gameStatus === 'won') {
     messageEl.textContent = 'You won!';
     playAgainBtn.style.display = 'block';
   } else if (gameStatus === 'lost') {
-    messageEl.textContent = `You lost! The word was "${secretWord}."`;
+    messageEl.textContent = `You lost! The word was "${secretWord}"`;
     playAgainBtn.style.display = 'block';
   } else {
     messageEl.textContent = '';

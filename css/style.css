@@ -5,11 +5,31 @@ body {
   align-items: center;
   justify-content: flex-start;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   background-color: #f0f0f0;
   text-align: center;
+
+  animation: backgroundCycle 3s infinite;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  min-height: 100vh;
+  transition: background-image 1s ease-in-out;
+  background-color: black;
 }
 
+@keyframes backgroundCycle {
+    0% {
+        background-image: url('../images/spaceman1.png');
+    }
+    50% {
+        background-image: url('../images/spaceman2.png');
+    }
+    100% {
+        background-image: url('../images/spaceman1.png');
+    }
+}
 
 #word, #letters, #message, #guesses-left, #instructions {
     margin: 15px 0;
@@ -41,15 +61,45 @@ button:hover {
   background-color: white;
   font-weight: bold;
   display: inline-block;
-  margin: 20px auto;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 
 
 #letters {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: center;
     max-width: 600px;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    margin-top: 460px
+}
+
+h1 {
+    color: white;
+}
+
+h1, #instructions {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+#word {
+    color: white;
+    font-size: larger;
+    margin-top: 40px;
+}
+
+#message {
+    color: white;
+}
+
+#play-again {
+    display: none;
+    margin: 20px auto;
 }
