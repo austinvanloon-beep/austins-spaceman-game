@@ -9,6 +9,10 @@ body {
   background-color: #f0f0f0;
   text-align: center;
 
+  /* here are two links I used to find some of the CSS code below for "body" and "@keyframes", and any other code including "transition", "transform", and any units including "vh":
+  https://www.w3schools.com/css/default.asp
+  https://developer.mozilla.org/en-US/docs/Web/CSS/background-size?utm */
+
   animation: backgroundCycle 3s infinite;
   background-size: contain;
   background-repeat: no-repeat;
@@ -116,5 +120,4 @@ p {
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    padding-top: px;
 }

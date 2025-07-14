@@ -1,3 +1,45 @@
+// user stories
+
+// as a user i want to: 
+
+// see a start screen to start Game
+// see a visual theme
+// guess letters to figure secret word
+// correctly guessed letter to appear on screen
+// see which letters are already guessed
+// see how many guesses i have left
+// see if i won or lost the Game
+// be able to play again
+
+
+// pseudocode
+// setup
+// make secret words
+// set max number of guesses
+// set up buttons
+
+// variables?
+// feedback on win/loss
+// feedback on number of guesses remaining
+// feedback on letters guesed correctly/incorrectly
+
+// DOM
+// area showing word with blanks
+// show letter buttons
+// show win/loss message
+// show guess counter
+// show play again buttons
+
+// function
+// pick random word
+// reset guesses
+// display?
+
+// player interaction
+// if guessed correct letter, display
+// if guessed incorrectly, display and update guess amount
+// update screen
+// update win/loss status
 
 
 
