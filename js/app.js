@@ -14,7 +14,7 @@ const guessesLeftEl = document.getElementById('guesses-left');
 
 
 function init() {
-  const wordList = ['WORDONE', 'WORDTWO', 'WORDTHREE', 'WORDFOUR', 'WORDFIVE'];
+  const wordList = ['CELESTIAL', 'CONSTELLATION', 'NEBULA', 'SUPERNOVA', 'DARKMATTER'];
   secretWord = wordList[Math.floor(Math.random() * wordList.length)];
   guessedLetters = [];
   remainingGuesses = 6;
